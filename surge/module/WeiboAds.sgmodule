@@ -1,0 +1,11 @@
+#!name=Block Weibo Advertising
+#!desc=To skip Weibo advertisements.
+#!system=ios
+
+[URL Rewrite]
+^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(actionad|sdkad)\.php - reject
+^https?:\/\/wbapp\.uve\.weibo\.com\/wbapplua\/wbpullad\.lua - reject
+^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=get_coopen_ads - reject
+
+[MITM]
+hostname = %APPEND% *.uve.weibo.com,weibointl.api.weibo.cn
