@@ -1,0 +1,11 @@
+#!name=Block Tieba Advertising
+#!desc=To skip Tieba advertisements.
+#!system=ios
+
+[URL Rewrite]
+^https?:\/\/c\.tieba\.baidu\.com\/c\/s\/splashSchedule - reject
+^https?:\/\/c\.tieba\.baidu\.com\/c\/f\/forum\/getAdInfo - reject
+^https?:\/\/c\.tieba\.baidu\.com\/\w+\/\w+\/(sync|newRnSync|mlog) - reject
+
+[MITM]
+hostname = %APPEND% c.tieba.baidu.com
