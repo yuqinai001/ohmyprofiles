@@ -1,0 +1,14 @@
+#!name=Block Zhihu Advertising
+#!desc=To skip Zhihu advertisements.
+#!system=ios
+
+[URL Rewrite]
+^https?:\/\/api\.zhihu\.com\/commercial_api\/ - reject
+^https?:\/\/api\.zhihu\.com\/fringe\/ad - reject
+^https?:\/\/api\.zhihu\.com\/ad - reject
+^https?:\/\/api\.zhihu\.com\/appview\/api\/v\d\/answers\/\d+\/recommendations - reject
+^https?:\/\/api\.zhihu\.com\/\w+\/\d+\/comments\/featured-comment-ad - reject
+^https?:\/\/www\.zhihu\.com\/api\/v\d\/answers/\d+/recommendations - reject
+
+[MITM]
+hostname = %APPEND% www.zhihu.com,api.zhihu.com
