@@ -10,4 +10,4 @@
 ^https?:\/\/dsp\.toutiao\.com\/api\/xunfei\/ads\/ - reject
 
 [MITM]
-hostname = %APPEND% *.snssdk.com
+hostname = %APPEND% *.amemv.com, *.musical.com, *.snssdk.com, *.tiktok.com
