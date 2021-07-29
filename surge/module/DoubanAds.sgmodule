@@ -1,0 +1,9 @@
+#!name=Douban
+#!desc=To skip Douban advertisements.
+#!system=ios
+
+[URL Rewrite]
+^https?:\/\/api\.douban\.com\/v\d\/app_ads\/ - reject
+
+[MITM]
+hostname = %APPEND% api.douban.com
