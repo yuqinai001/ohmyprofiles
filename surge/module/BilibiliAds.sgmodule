@@ -1,5 +1,5 @@
-#!name=Block Bilibili Advertising
-#!desc=To skip Bilibili splash advertisements.
+#!name=Bilibili
+#!desc=To skip Bilibili advertisements.
 #!system=ios
 
 [Rule]
