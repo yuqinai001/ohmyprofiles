@@ -1,0 +1,26 @@
+#!name=Weibo
+#!desc=To skip Weibo advertisements.
+#!system=ios
+[General]
+force-http-engine-hosts = %APPEND% weibointl.api.weibo.cn
+
+[RULE]
+DOMAIN-SUFFIX,alitui.weibo.com,REJECT
+DOMAIN-SUFFIX,beacon.sina.com.cn,REJECT
+DOMAIN,adimg.uve.weibo.com,REJECT
+DOMAIN,adimg.vue.weibo.com,REJECT
+DOMAIN,u1.img.mobile.sina.cn,REJECT
+DOMAIN,sax.sina.com.cn,REJECT
+DOMAIN,saxs.sina.com.cn,REJECT
+DOMAIN,saxn.sina.com.cn,REJECT
+
+[URL Rewrite]
+^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(actionad|sdkad)\.php - reject
+^https?:\/\/wbapp\.uve\.weibo\.com\/wbapplua\/wbpullad\.lua - reject
+^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=get_coopen_ads - reject
+^https?:\/\/tqt\.weibo\.cn\/overall\/redirect\.php\?r=(tqt_sdkad|tqtad) - reject
+^https?:\/\/tqt\.weibo\.cn\/[\w=?&%.-]+advert\.index - reject
+^https?:\/\/tqt\.weibo\.cn\/api\/advert\/ - reject
+
+[MITM]
+hostname = %APPEND% *.uve.weibo.com,weibointl.api.weibo.cn,tqt.weibo.cn
