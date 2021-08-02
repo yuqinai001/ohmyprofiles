@@ -1,6 +1,7 @@
 #!name=Sina
 #!desc=To skip Sina advertisements.
 #!system=ios
+
 [General]
 force-http-engine-hosts = %APPEND% weibointl.api.weibo.cn
 
