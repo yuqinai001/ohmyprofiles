@@ -2,9 +2,6 @@
 #!desc=To skip Sina advertisements.
 #!system=ios
 
-[General]
-force-http-engine-hosts = %APPEND% weibointl.api.weibo.cn
-
 [RULE]
 DOMAIN-SUFFIX,alitui.weibo.com,REJECT
 DOMAIN-SUFFIX,beacon.sina.com.cn,REJECT
