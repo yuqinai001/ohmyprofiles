@@ -2,9 +2,12 @@
 #!desc=To skip Douban advertisements.
 #!system=ios
 
+[RULE]
+AND,((USER-AGENT,Frodo*), (DOMAIN,119.29.29.29)),REJECT
+
 [URL Rewrite]
 ^https?://img\d.doubanio.com/rda - reject
 ^https?://img\d.doubanio.com/view/dale-online/dale_ad/ - reject
 
 [MITM]
-hostname = %APPEND% *.doubanio.com
+hostname = %APPEND% *doubanio.com, *douban.com
