@@ -2,6 +2,9 @@
 #!desc=To skip Douban advertisements.
 #!system=ios
 
+[RULE]
+AND,((USER-AGENT,Frodo*), (DOMAIN,119.29.29.29)),REJECT
+
 [URL Rewrite]
 ^https?:\/\/api\.douban\.com\/v\d\/app_ads\/ - reject
 
