@@ -1,0 +1,98 @@
+port: 7890
+
+socks-port: 7891
+
+# redir-port: 7892
+
+# tproxy-port: 7893
+
+# mixed-port: 7890
+
+# authentication:
+#   - ":"
+
+allow-lan: true
+
+bind-address: '*'
+
+mode: rule
+
+log-level: info
+
+ipv6: true
+
+external-controller: 0.0.0.0:9090
+
+external-ui: ui
+
+secret: ""
+
+# interface-name: en0
+
+# routing-mark: 6666
+
+hosts:
+  # '*.clash.dev': 127.0.0.1
+  # '.dev': 127.0.0.1
+  # 'alpha.clash.dev': '::1'
+
+profile:
+  tracing: true
+  store-selected: true
+  store-fake-ip: true
+
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  ipv6: true
+  # default-nameserver:
+  #   - 223.5.5.5
+  #   - 223.6.6.6
+  enhanced-mode: redir-host
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+  # fake-ip-filter:
+  #   - '*.lan'
+  #   - localhost.ptlogin2.qq.com
+  nameserver:
+    - 223.5.5.5
+    - 223.6.6.6
+    - dhcp://en0
+  # fallback:
+  #   - tcp://1.1.1.1
+  # fallback-filter:
+  #   geoip: true
+  #   geoip-code: CN
+  #   ipcidr:
+  #     - 240.0.0.0/4
+  #   domain:
+  #     - '+.google.com'
+  #     - '+.facebook.com'
+  #     - '+.youtube.com'
+  # nameserver-policy:
+  #   'www.baidu.com': '114.114.114.114'
+  #   '+.internal.crop.com': '10.0.0.1'
+
+tun:
+  enable: true
+  stack: gvisor
+  dns-hijack:
+    - 198.18.0.2:53
+  auto-route: true
+  auto-detect-interface: true
+
+proxies:
+
+proxy-groups:
+
+rules:
+  - DOMAIN-SUFFIX,local,DIRECT
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - IP-CIDR,10.0.0.0/8,DIRECT
+  - IP-CIDR,172.16.0.0/12,DIRECT
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  - IP-CIDR,100.64.0.0/10,DIRECT
+  - IP-CIDR,224.0.0.0/4,DIRECT
+  - IP-CIDR6,fe80::/10,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,DIRECT
