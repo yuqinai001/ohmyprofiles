@@ -1,0 +1,9 @@
+#!name=Block NetEase CloudMusic Advertising
+#!desc=F@ck NetEase
+
+[URL Rewrite]
+^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\/eapi\/ad\/ - reject
+^https?:\/\/interface(\d)?.music.163.com\/eapi\/ad\/ - reject
+
+[MITM]
+hostname = %APPEND% interface*.music.163.com,59.111.181.*
